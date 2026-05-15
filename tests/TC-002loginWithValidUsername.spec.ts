@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-
-test('@Testcase - 002 login with invalid username', async ({page}) => {
+test.describe('login page', ()=>{
+  test('@Testcase - 002 login with invalid username', async ({page}) => {
     await page.goto('https://practicetestautomation.com/practice-test-login/')
     await expect(page.getByRole('textbox', { name: 'Username'})).toBeVisible()
     await page.getByLabel('Username').fill('incorrectUser')
@@ -12,3 +12,5 @@ test('@Testcase - 002 login with invalid username', async ({page}) => {
     await expect(page.getByText('Your username is invalid!')).toBeVisible()
 
   }) 
+});
+ 
