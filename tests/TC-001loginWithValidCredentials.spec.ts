@@ -9,6 +9,8 @@ test.describe('Login Page', ()=> {
         await page.getByRole('textbox', {name: 'Password' }).fill('Password123')
         await expect(page.getByRole('button', { name: 'Submit'})).toBeEnabled()
         await page.getByRole('button', { name: 'Submit' }).click()
+        await expect(page.locator('h1.post-title')).toHaveText('Logged In Successfully')
+        await expect(page.locator('text=Log out')).toBeEnabled()
         
       })
 });
