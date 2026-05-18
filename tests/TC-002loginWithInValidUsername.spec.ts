@@ -9,7 +9,8 @@ test.describe('login page', ()=>{
     await page.getByLabel('Password').fill('Password123')
     await expect(page.getByRole('button', { name: 'Submit'})).toBeEnabled()
     await page.getByRole('button', { name: 'Submit'}).click();
-    await expect(page.getByText('Your username is invalid!')).toBeVisible()
+    await expect(page.locator('#error')).toHaveText('Your username is invalid!');
+  
 
   }) 
 });
