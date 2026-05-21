@@ -1,6 +1,6 @@
 import { test, expect, Page } from '@playwright/test';
 import { USERNAME, PASSWORD } from '../Fixtures/constants.ts';
-import { BASE_URL } from '../Fixtures/urlConstants.ts';
+import { BASE_URL, LOGIN_URL } from '../Fixtures/urlConstants.ts';
 
 test.describe("functions" , ()=> {
     test('Login functionlity', async ({ page }) =>{
@@ -21,7 +21,7 @@ test.describe("functions" , ()=> {
 })
 
 async function navigateToLoginPage(page : Page) {
-    await page.goto(`${BASE_URL}/practice-test-login/`)
+    await page.goto(`${BASE_URL}${LOGIN_URL}`)
 }
 
 async function fillLoginForm(page : Page, username: string, password: string) {
