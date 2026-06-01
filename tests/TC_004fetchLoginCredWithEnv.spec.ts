@@ -10,7 +10,7 @@ const data = JSON.parse(
     fs.readFileSync('./Fixtures/url.json', 'utf8')
 )
 
-test.describe("fetch login cred from env file", ()=> {
+test.describe("fetch login cred from env file and json file", ()=> {
     test('Login Functionality', async ({ page }) =>{
 
          //navigate to loginPage
