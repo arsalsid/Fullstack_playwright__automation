@@ -1,3 +1,4 @@
 {
-    "baseUrl": "https://practicetestautomation.com/"
+    "baseUrl": "https://practicetestautomation.com/",
+    "loginUrl": "/practice-test-login/"
 }

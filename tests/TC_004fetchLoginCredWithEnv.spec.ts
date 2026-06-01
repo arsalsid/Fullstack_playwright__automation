@@ -1,10 +1,11 @@
 import { test, expect, Page} from '@playwright/test'
-import { USERNAME, PASSWORD } from '../Fixtures/constants';
 import * as dotenv from 'dotenv'
 const fs = require('fs')
 
+//load username and password from dotenv file
 dotenv.config();
 
+//load baseUrl from Json File
 const data = JSON.parse(
     fs.readFileSync('./Fixtures/url.json', 'utf8')
 )
@@ -28,7 +29,7 @@ test.describe("fetch login cred from env file", ()=> {
     })
 
     async function navigateToLoginPage(page : Page) {
-        await page.goto(data.baseUrl)
+        await page.goto(`${data.baseUrl}${data.loginUrl}`)
     }
 
     async function fillLoginForm(page : Page, username: string, password: string) {
