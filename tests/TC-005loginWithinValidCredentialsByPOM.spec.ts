@@ -1,6 +1,6 @@
 import { test, expect, Page} from '@playwright/test'
 import LoginPage from '../pages/loginPage.ts'
-import { USERNAME , PASSWORD , INVALID_MSG } from '../Fixtures/constants.ts';
+import { USERNAME,PASSWORD,INVALID_MSG } from '../Fixtures/constants.ts';
 const fs = require('fs')
 
 //load baseUrl from Json File
