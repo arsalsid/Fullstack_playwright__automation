@@ -1,7 +1,11 @@
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
+import * as dotenv from 'dotenv'
 import { POST_REQUEST_API_URL } from '../../Fixtures/constants.ts';
 import requestBody from '../../Fixtures/request-body.json';
+
+//load API URL from dotenv file
+dotenv.config();
 
 //load request body from Json File
 const data = JSON.parse(
@@ -9,7 +13,7 @@ const data = JSON.parse(
   )
 
 test('POST /objects should create a new object', async ({ request }) => {
-    const response = await request.post(POST_REQUEST_API_URL, {
+    const response = await request.post(process.env.POST_REQUEST_API_URL!, {
         headers: {
             'Content-Type': 'application/json',
         },

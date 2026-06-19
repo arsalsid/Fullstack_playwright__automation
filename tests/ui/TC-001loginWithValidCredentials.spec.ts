@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import LoginPage from '../pages/loginPage.ts'
-import { USERNAME , PASSWORD } from '../Fixtures/constants.ts';
+import LoginPage from '../../pages/loginPage.ts'
+import { USERNAME , PASSWORD } from '../../Fixtures/constants.ts';
 import * as dotenv from 'dotenv'
 const fs = require('fs')
 
