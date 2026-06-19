@@ -10,14 +10,16 @@ test('GET /objects should return list of objects', async ({ request }) => {
 
     expect(response.ok()).toBeTruthy();
     expect(response.status()).toBe(200);
+    console.log("Response : ",response);
 
-    const body = await response.json();
-    console.log(body);
-    expect(Array.isArray(body)).toBeTruthy();
-    expect(body.length).toBeGreaterThan(0);
+    const responseBody = await response.json();
+    console.log("Response Body : ",responseBody);
+    
+    expect(Array.isArray(responseBody)).toBeTruthy();
+    expect(responseBody.length).toBeGreaterThan(0);
 
     //validate a minimal shape for at least one object.
-    expect(body[0]).toHaveProperty('id');
-    expect(body[0]).toHaveProperty('name');
+    expect(responseBody[0]).toHaveProperty('id');
+    expect(responseBody[0]).toHaveProperty('name');
 
 })

@@ -22,12 +22,13 @@ test('POST /objects should create a new object', async ({ request }) => {
 
     expect(response.ok()).toBeTruthy();
     expect(response.status()).toBe(200);
+    console.log("Response : ",response);
 
-    const body = await response.json();
-    console.log(body);
+    const responseBody = await response.json();
+    console.log("Response Body : ",responseBody);
 
-    expect(body).toHaveProperty('id');
-    expect(body).toHaveProperty('name', requestBody.name);
-    expect(body).toHaveProperty('createdAt');
-    expect(body.data).toEqual(requestBody.data);
+    expect(responseBody).toHaveProperty('id');
+    expect(responseBody).toHaveProperty('name', requestBody.name);
+    expect(responseBody).toHaveProperty('createdAt');
+    expect(responseBody.data).toEqual(requestBody.data);
 });
