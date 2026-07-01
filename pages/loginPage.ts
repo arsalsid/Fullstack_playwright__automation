@@ -15,7 +15,7 @@ class LoginPage {
         this.validation = page.locator('#error')
     }
 
-    async loginToApp(username: string, password: string) {
+    async loginToApp(page: Page, username: string, password: string) {
         await this.loginField.fill(username)
         await this.passwordField.fill(password)
         await this.buttonField.click()
