@@ -42,7 +42,8 @@ export default defineConfig({
         launchOptions: {
           slowMo: 200
         }
-      }
+      },
+      dependencies: ['setup'],
     },
     {
       name: 'Safari',
@@ -53,7 +54,8 @@ export default defineConfig({
         screenshot: 'only-on-failure',
         video: 'retain-on-failure',
         trace: 'retain-on-failure'
-      }
+      },
+      dependencies: ['setup'],
     },
     {
       name: 'Edge',

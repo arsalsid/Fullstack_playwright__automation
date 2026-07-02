@@ -8,7 +8,7 @@
   "allure:open": "allure open allure-report"
   },
   "keywords": [],
-  "author": "",
+  "author": "Muhammad Arsalan",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
