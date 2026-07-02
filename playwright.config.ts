@@ -7,8 +7,11 @@ export default defineConfig({
   reporter: [
     ['list'], // Default reporter
     ['allure-playwright'],
-    ['html', {outputFolder: 'playwright-report' }]
+    ['html', { outputFolder: 'playwright-report' }]
   ],
+  globalSetup: './global-setup.ts', // Add this line
+  globalTeardown: './global-teardown.ts', // Include this if you also have global teardown
+
   projects: [
     { name: 'setup', testMatch: /.*\.setup\.ts/ },
     {
