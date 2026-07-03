@@ -15,6 +15,14 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      LOGIN_USERNAME: ${{ secrets.LOGIN_USERNAME }}
+      LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
+      INVALID_USERNAME: ${{ secrets.INVALID_USERNAME }}
+      INVALID_PASSWORD: ${{ secrets.INVALID_PASSWORD }}
+      OBJECTS_API_URL: ${{ secrets.OBJECTS_API_URL }}
+      POST_REQUEST_API_URL: ${{ secrets.POST_REQUEST_API_URL }}
+      DELETE_REQUEST_API_URL: ${{ secrets.DELETE_REQUEST_API_URL }}
  
     steps:
     - uses: actions/checkout@v4

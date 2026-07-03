@@ -9,6 +9,5 @@ node_modules/
 /allure-results
 /allure-report
 
-# Local secrets and test data (do not commit)
+# Local secrets (do not commit)
 .env
-Fixtures/

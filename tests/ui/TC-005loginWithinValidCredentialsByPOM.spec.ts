@@ -26,7 +26,7 @@ test.describe('Login functionality', ()=> {
     test("Login with Invalid credentials by using POM pattern", async ({page}) => {
         const loginPage = new LoginPage(page);
         await page.goto(`${data.baseUrl}${data.loginUrl}`)
-        await loginPage.loginToApp(process.env.INVALID_USERNAME!, process.env.INAVLID_PASSWORD!)
+        await loginPage.loginToApp(process.env.INVALID_USERNAME!, process.env.INVALID_PASSWORD!)
         await expect(loginPage.validationError).toHaveText(INVALID_MSG);
     })
 })

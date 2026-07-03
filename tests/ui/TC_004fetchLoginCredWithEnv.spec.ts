@@ -44,7 +44,6 @@ test.describe("fetch login cred from env file and json file", ()=> {
     }
     
     async function verifySucessfulLogin(page : Page) {
-        await expect(page.getByRole('textbox', { name: 'Username'})).toBeVisible()
-        await expect(page.getByRole('textbox', { name: 'Password'})).toBeVisible()
-        await expect(page.getByRole('button', { name: 'Submit'})).toBeEnabled()
+        await expect(page.locator('h1.post-title')).toHaveText('Logged In Successfully')
+        await expect(page.getByRole('link', { name: 'Log out' })).toBeVisible()
     }

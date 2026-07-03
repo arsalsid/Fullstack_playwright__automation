@@ -1,0 +1,5 @@
+{
+    "baseUrl": "https://practicetestautomation.com/",
+    "loginUrl": "/practice-test-login/",
+    "successloginUrl": "https://practicetestautomation.com/logged-in-successfully/"
+}
