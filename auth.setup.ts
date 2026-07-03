@@ -1,11 +1,21 @@
-import {test as setup, expect, Page} from '@playwright/test';
+import { test as setup } from '@playwright/test';
 import LoginPage from './pages/loginPage';
+import path from 'node:path';
+import * as dotenv from 'dotenv';
 
-// Constant file for storing user session:
+const fs = require('fs');
+
+dotenv.config();
+
 const authFile = 'playwright/.auth/authentication.json';
 
-setup('Login with Valid credentials by using POM pattern', async ({ page }) => {
-    const loginPage = new LoginPage(page)
-    await loginPage.loginToApp(page, process.env.USERNAME!, process.env.PASSWORD!)
-    await page.context().storageState({ path: authFile });
-  }); 
+const data = JSON.parse(
+    fs.readFileSync('./Fixtures/url.json', 'utf8')
+);
+
+setup('authenticate', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    await page.goto(`${data.baseUrl}${data.loginUrl}`);
+    await loginPage.loginToApp(process.env.LOGIN_USERNAME!, process.env.LOGIN_PASSWORD!);
+    await page.context().storageState({ path: path.resolve(authFile) });
+}); 

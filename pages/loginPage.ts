@@ -17,12 +17,10 @@ class LoginPage {
         this.validationSuccessMsg = page.locator('h1.post-title')
     }
 
-    async loginToApp(page: Page, username: string, password: string) {
+    async loginToApp(username: string, password: string) {
         await this.loginField.fill(username)
         await this.passwordField.fill(password)
         await this.buttonField.click()
-        await this.validationSuccessMsg.waitFor({timeout: 10000})
-        await this.validationError.waitFor({timeout: 10000})
     }
 }
 export default LoginPage;

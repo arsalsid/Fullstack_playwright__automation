@@ -17,7 +17,7 @@ test.describe("fetch login cred from env file and json file", ()=> {
                 await navigateToLoginPage(page);
         
                 //fill the value of login
-                await fillLoginForm(page, process.env.USERNAME!, process.env.PASSWORD!);
+                await fillLoginForm(page, process.env.LOGIN_USERNAME!, process.env.LOGIN_PASSWORD!);
         
                 //submit form
                 await submitLoginForm(page);
