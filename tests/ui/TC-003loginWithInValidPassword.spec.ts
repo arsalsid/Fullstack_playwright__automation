@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+test.use({ storageState: { cookies: [], origins: [] } });
+
 
 test.describe('Login Page', ()=> {
     test('@Testcase - 003 login with invalid password', async ({page}) => {

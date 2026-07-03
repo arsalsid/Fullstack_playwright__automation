@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+test.use({ storageState: { cookies: [], origins: [] } });
+
 test.describe('login page', ()=>{
   test('@Testcase - 002 login with invalid username', async ({page}) => {
     await page.goto('https://practicetestautomation.com/practice-test-login/')

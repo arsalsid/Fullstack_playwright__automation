@@ -4,6 +4,8 @@ import { USERNAME , PASSWORD } from '../../Fixtures/constants.ts';
 import * as dotenv from 'dotenv'
 const fs = require('fs')
 
+test.use({ storageState: { cookies: [], origins: [] } });
+
 //load username and password from dotenv file
 dotenv.config();
 
